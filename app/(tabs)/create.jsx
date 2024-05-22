@@ -97,7 +97,7 @@ const Create = () => {
         />
         <View className='mt-7 space-y-2'>
           <Text className='text-base text-gray-100 text-pmedium'>
-            Upload Video
+            Video File
           </Text>
           <TouchableOpacity onPress={() => openPicker('video')}>
             {form.video ? (
@@ -150,7 +150,7 @@ const Create = () => {
           otherStyles='mt-7'
         />
         <CustomButton
-          title='Publish video'
+          title='Upload Video'
           handlePress={submit}
           containerStyles='mt-7'
           isLoading={uploading}
