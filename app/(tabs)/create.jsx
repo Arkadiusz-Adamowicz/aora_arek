@@ -24,7 +24,6 @@ const Create = () => {
     title: '',
     video: null,
     thumbnail: null,
-    prompt: '',
   });
 
   const openPicker = async selectType => {
@@ -53,10 +52,7 @@ const Create = () => {
   };
 
   const submit = async () => {
-    if (
-      (form.prompt === '') | (form.title === '') | !form.thumbnail ||
-      !form.video
-    ) {
+    if ((form.title === '') | !form.thumbnail || !form.video) {
       return Alert.alert('Please fill in all the fields');
     }
 
@@ -77,7 +73,6 @@ const Create = () => {
         title: '',
         video: null,
         thumbnail: null,
-        prompt: '',
       });
       setUploading(false);
     }
@@ -91,7 +86,7 @@ const Create = () => {
         <FormField
           title='Video Title'
           value={form.title}
-          placeholder='Give your video a catch title...'
+          placeholder='Set title for your video'
           handleChangeText={e => setForm({ ...form, title: e })}
           otherStyles='mt-10'
         />
@@ -140,15 +135,6 @@ const Create = () => {
             )}
           </TouchableOpacity>
         </View>
-        <FormField
-          title='AI Prompt'
-          value={form.prompt}
-          placeholder='The prompt you used to create this video'
-          handleChangeText={e => {
-            setForm({ ...form, prompt: e });
-          }}
-          otherStyles='mt-7'
-        />
         <CustomButton
           title='Upload Video'
           handlePress={submit}

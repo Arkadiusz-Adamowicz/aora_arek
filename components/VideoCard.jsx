@@ -45,20 +45,20 @@ const VideoCard = ({
       {play ? (
         <Video
           source={{ uri: video }}
-          className='w-full h-60 rounded-xl mt-3'
+          className='w-full h-60 rounded-2xl mt-3'
           resizeMode={ResizeMode.CONTAIN}
           useNativeControls
           shouldPlay
         />
       ) : (
         <TouchableOpacity
-          className='w-full h-60 rounded-xl mt-3 relative justify-center items-center'
+          className='w-full h-60 rounded-2xl mt-3 relative justify-center items-center'
           activeOpacity={0.7}
           onPress={() => setPlay(true)}
         >
           <Image
             source={{ uri: thumbnail }}
-            className='w-full h-full rounded-xl mt-3'
+            className='w-full h-full rounded-2xl mt-3'
             resizeMode='cover'
           />
           <Image
